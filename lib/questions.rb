@@ -86,11 +86,12 @@ end
 # where 'special character' means anything apart from the letters
 # a-z (uppercase and lower) or numbers
 def check_a_string_for_special_characters(string)
-  string.scan(/\W+/).length > 0 
+  string.scan(/\W+/).length > 0
 end
 
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
+  array.select{|i| i[0] == 'a'}
 end
 
 # keep only the elements that start with a vowel
