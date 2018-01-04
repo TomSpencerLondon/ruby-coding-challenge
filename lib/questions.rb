@@ -56,12 +56,16 @@ end
 
 # convert a symbol into a string
 def turn_symbol_into_string(symbol)
+  symbol.to_s
 end
 
 
 # get the domain name *without* the .com part, from an email address
 # so onboarding@makersacademy.com becomes makersacademy
 def get_domain_name_from_email_address(email)
+  domain_name = email.split("@").last
+  array = domain_name.split(".")
+  array[0]
 end
 
 # capitalize the first letter in each word of a string,
@@ -70,12 +74,19 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
+  exceptions = ['a', 'and', 'the']
+  string.capitalize!
+  string.split.map do | word |
+    exceptions.include?(word)? word : word.capitalize
+  end.join(' ')
+
 end
 
 # return true if a string contains any special characters
 # where 'special character' means anything apart from the letters
 # a-z (uppercase and lower) or numbers
 def check_a_string_for_special_characters(string)
+  string.scan(/\W+/).length > 0 
 end
 
 # keep only the elements that start with an a
