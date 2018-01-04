@@ -35,7 +35,8 @@ end
 # pairing up elements. e.g. ['a', 'b', 'c', 'd'] becomes
 # {'a' => 'b', 'c' => 'd'}
 def convert_array_to_a_hash(array)
-
+  array_sliced = array.each_slice(2).to_a
+  Hash[array_sliced]
 end
 
 
