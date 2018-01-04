@@ -43,6 +43,7 @@ end
 # take out all the capital letters from a string
 # so 'Hello JohnDoe' becomes 'ello ohnoe'
 def remove_capital_letters_from_string(string)
+  string.gsub(/[A-Z]/,"")
 end
 
 
@@ -144,6 +145,7 @@ end
 # take a date and format it like dd/mm/yyyy, so Halloween 2013
 # becomes 31/10/2013
 def format_date_nicely(date)
+
 end
 
 # get the upper limit of a range. e.g. for the range 1..20, you
